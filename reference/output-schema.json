@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EHCP Golden Thread Editor Response",
+  "type": "object",
+  "required": [
+    "verdict",
+    "priority_findings",
+    "golden_thread_breaks",
+    "evidence_alignment",
+    "clarifications",
+    "strengths",
+    "self_check"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "object",
+      "required": [
+        "document_stage",
+        "review_scope",
+        "evidence_supplied",
+        "limitations"
+      ],
+      "properties": {
+        "document_stage": {
+          "type": "string"
+        },
+        "review_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_supplied": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "priority_findings": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "golden_thread_breaks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "source_ids",
+          "explanation",
+          "confidence"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "orphan_need",
+              "unsupported_outcome",
+              "unserved_outcome",
+              "unanchored_provision",
+              "partial_thread"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    },
+    "evidence_alignment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "recommendation_quote",
+          "draft_location",
+          "classification",
+          "missing_or_altered_elements",
+          "human_action"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "recommendation_quote": {
+            "type": "string"
+          },
+          "draft_location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "classification": {
+            "enum": [
+              "included",
+              "partially_included",
+              "omitted",
+              "contradicted",
+              "unclear"
+            ]
+          },
+          "missing_or_altered_elements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "human_action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "clarifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "quote",
+          "location",
+          "explanation"
+        ],
+        "properties": {
+          "quote": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "self_check": {
+      "type": "object",
+      "required": [
+        "no_replacement_wording",
+        "no_invented_facts",
+        "authority_types_distinguished",
+        "uncertainty_visible",
+        "sensitive_data_minimised"
+      ],
+      "properties": {
+        "no_replacement_wording": {
+          "const": true
+        },
+        "no_invented_facts": {
+          "const": true
+        },
+        "authority_types_distinguished": {
+          "type": "boolean"
+        },
+        "uncertainty_visible": {
+          "type": "boolean"
+        },
+        "sensitive_data_minimised": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "required": [
+        "finding_id",
+        "severity",
+        "confidence",
+        "section",
+        "location",
+        "draft_quote",
+        "evidence_quote",
+        "defect",
+        "why_it_matters",
+        "basis",
+        "revision_task"
+      ],
+      "properties": {
+        "finding_id": {
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "critical",
+            "major",
+            "moderate",
+            "minor"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "section": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "draft_quote": {
+          "type": "string"
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defect": {
+          "type": "string"
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "statutory_duty",
+              "regulation",
+              "statutory_guidance",
+              "professional_evidence",
+              "internal_consistency",
+              "editorial_good_practice"
+            ]
+          }
+        },
+        "revision_task": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
