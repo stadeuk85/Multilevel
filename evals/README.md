@@ -12,7 +12,7 @@ The evaluation layer tests the editor's contract without using real child or fam
 - **Privacy:** fixtures contain no real identifiers or health records.
 - **Determinism:** stable synthetic inputs produce stable IDs and classifications.
 
-## Current competition fixture
+## Current validation fixture
 
 `fixtures/minimal-valid-response.json` is a synthetic contract fixture used by the repository validation workflow.
 

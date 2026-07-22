@@ -6,7 +6,7 @@ Hold generated or reviewable evidence describing a specific repository release. 
 
 ## Current release
 
-Use `_release/current/` for the active competition release.
+Use `_release/current/` for the active public release.
 
 ## Release gate
 

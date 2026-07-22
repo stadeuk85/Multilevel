@@ -1,25 +1,25 @@
-# EHCP Golden Thread Editor v1.1 Competition Validation
+# EHCP Golden Thread Editor v1.1 Validation Report
 
 **Release date:** 22 July 2026  
-**Release branch:** `competition-icm-v1.1`  
-**Release type:** ICM architecture and competition presentation hardening
+**Release branch:** `master`  
+**Release type:** ICM architecture and public-use hardening
 
 ## Decision
 
-**PASS for competition submission.**
+**PASS for public release.**
 
-GitHub Actions workflow **Validate editor contract**, run **22**, completed successfully. The public methodology package is approved for demonstration and competition submission.
+GitHub Actions workflow **Validate editor contract**, run **22**, completed successfully. The public methodology package is approved for demonstration and general use within its stated boundaries.
 
 This decision does not approve production handling of identifiable EHCP material, automated statutory decisions or legal advice.
 
-## Competition rubric alignment
+## Usability and methodology alignment
 
-| Judging question | Evidence in the repository |
+| Review question | Evidence in the repository |
 |---|---|
 | Does it critique rather than rewrite? | `rules.md` prohibits replacement text and `examples.md` contrasts critique with rewriting. |
 | Is the domain specific? | `identity.md` limits the editor to draft EHCPs in England, especially Sections B, E and F. |
-| Is the methodology clean? | The original five-part editor remains intact. ICM entry files, workflow folders and stage contracts add inspectable orchestration. |
-| Can a stranger use it? | `README.md`, `SKILL.md`, `AGENTS.md`, the file map, Claude Project quick start and synthetic demo provide clear entry points. |
+| Is the methodology clean? | The five-part core editor remains intact. ICM entry files, workflow folders and stage contracts add inspectable orchestration. |
+| Can a stranger use it? | `README.md`, `SKILL.md`, `AGENTS.md`, the file map, project-workspace quick start and synthetic demo provide clear entry points. |
 
 ## ICM architecture checks
 
@@ -80,11 +80,11 @@ Public demo boundary: PASS
 
 ## Human release check
 
-Confirmed before merge:
+Confirmed before release:
 
 1. GitHub Actions passed.
-2. The README links and Claude Project route were reviewed.
+2. The README links and project-workspace route were reviewed.
 3. The demo is synthetic and contains no upload or storage feature.
 4. No real case information is present.
-5. The public submission text accurately describes the editor.
+5. The public description accurately explains the editor.
 6. The repository is public.

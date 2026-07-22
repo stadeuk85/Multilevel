@@ -12,7 +12,7 @@ This repository defines a governed editorial workflow for reviewing draft EHCPs 
 | `reference/` | Stable legal, editorial and evidence-review guidance |
 | `templates/` | Blank case-run structures copied for each review |
 | `evals/` | Synthetic fixtures and contract tests |
-| `demo/` | Public, non-case-specific competition demonstration |
+| `demo/` | Public, non-case-specific demonstration |
 | `_release/` | Manifest, validation evidence and release notes |
 
 ## Active workflow
@@ -29,4 +29,4 @@ The workflow state is represented by completed stage artefacts in the copied rev
 
 ## Release boundary
 
-The competition release demonstrates method, governance, structured output and workflow design. It is not a statutory decision system, legal service or production personal-data platform.
+The public release demonstrates method, governance, structured output and workflow design. It is not a statutory decision system, legal service or production personal-data platform.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the competition repository structure and response contract."""
+"""Validate the public repository structure and response contract."""
 
 from __future__ import annotations
 
@@ -20,7 +20,6 @@ REQUIRED_FILES = [
     "AGENTS.md",
     "CONTEXT.md",
     "FILE-MAP.md",
-    "COMPETITION_SUBMISSION.md",
     "identity.md",
     "rules.md",
     "examples.md",
@@ -54,6 +53,9 @@ STAGES = [
     "08_final-output",
 ]
 
+PUBLIC_TEXT_SUFFIXES = {".md", ".json", ".py", ".html", ".yml", ".yaml"}
+LEGACY_TERMS = ("comp" "etition",)
+
 
 def load_json(relative_path: str) -> object:
     path = ROOT / relative_path
@@ -66,6 +68,16 @@ def require_phrases(path: str, phrases: list[str], errors: list[str]) -> None:
     for phrase in phrases:
         if phrase.lower() not in text:
             errors.append(f"{path} is missing required phrase: {phrase}")
+
+
+def check_legacy_terms(errors: list[str]) -> None:
+    for path in ROOT.rglob("*"):
+        if not path.is_file() or ".git" in path.parts or path.suffix.lower() not in PUBLIC_TEXT_SUFFIXES:
+            continue
+        text = path.read_text(encoding="utf-8").lower()
+        for term in LEGACY_TERMS:
+            if term in text:
+                errors.append(f"Legacy event-specific term found in {path.relative_to(ROOT)}: {term}")
 
 
 def main() -> int:
@@ -131,6 +143,8 @@ def main() -> int:
     if "uploads and stores nothing" not in demo_text or "synthetic" not in demo_text:
         errors.append("Public demo must state its synthetic, no-upload boundary")
 
+    check_legacy_terms(errors)
+
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
@@ -142,6 +156,7 @@ def main() -> int:
     print("Authority and release records: PASS")
     print("Core editor controls: PASS")
     print("Public demo boundary: PASS")
+    print("Legacy terminology scan: PASS")
     return 0
 
 

@@ -14,13 +14,13 @@ This map lets a new reviewer locate the active workflow and its supporting mater
 
 ## Root entry files
 
-- `README.md`: public explanation and competition entry page.
+- `README.md`: public explanation and usage guide.
 - `SKILL.md`: compact skill trigger and route.
 - `AGENTS.md`: cold-start navigation and stop conditions.
 - `CONTEXT.md`: repository workspace contract.
 - `FILE-MAP.md`: this inventory.
 
-## Original competition editor
+## Core editor
 
 - `identity.md`: who the EHCP editor is and what it reviews.
 - `rules.md`: authoritative critique method and non-rewriting boundary.
