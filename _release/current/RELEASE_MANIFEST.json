@@ -4,7 +4,12 @@
   "branch": "competition-icm-v1.1",
   "jurisdiction": "England",
   "release_type": "ICM architecture and competition presentation hardening",
-  "status": "candidate",
+  "status": "validated",
+  "validation_run": {
+    "workflow": "Validate editor contract",
+    "run_number": 22,
+    "result": "success"
+  },
   "core_competition_files": [
     "identity.md",
     "rules.md",
