@@ -1,6 +1,6 @@
 {
   "workflow": "01_ehcp-golden-thread-review",
-  "workflow_version": "1.1.0-competition",
+  "workflow_version": "1.1.0",
   "jurisdiction": "England",
   "case_reference": "ANONYMISED-CASE",
   "created_at": null,
