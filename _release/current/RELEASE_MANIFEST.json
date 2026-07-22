@@ -1,0 +1,45 @@
+{
+  "release": "1.1.0-competition",
+  "release_date": "2026-07-22",
+  "branch": "competition-icm-v1.1",
+  "jurisdiction": "England",
+  "release_type": "ICM architecture and competition presentation hardening",
+  "status": "validated",
+  "validation_run": {
+    "workflow": "Validate editor contract",
+    "run_number": 22,
+    "result": "success"
+  },
+  "core_competition_files": [
+    "identity.md",
+    "rules.md",
+    "examples.md",
+    "reference/",
+    "README.md"
+  ],
+  "icm_entry_files": [
+    "SKILL.md",
+    "AGENTS.md",
+    "CONTEXT.md",
+    "FILE-MAP.md"
+  ],
+  "workflow": {
+    "path": "workflows/01_ehcp-golden-thread-review",
+    "stage_count": 8,
+    "human_gate_required": true
+  },
+  "assurance": {
+    "validator": "tools/validate_repo.py",
+    "workflow": ".github/workflows/validate.yml",
+    "schema": "reference/output-schema.json",
+    "fixture": "evals/fixtures/minimal-valid-response.json"
+  },
+  "public_demo": "demo/index.html",
+  "runtime_boundary": "No real EHCP or identifiable case data may be stored in the public repository.",
+  "limitations": [
+    "Editorial support only, not legal advice.",
+    "Not a statutory decision system.",
+    "Not a production platform for identifiable personal data.",
+    "Legal authorities must be rechecked against current official sources for live use."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "workflow": "01_ehcp-golden-thread-review",
+  "workflow_version": "1.1.0-competition",
+  "jurisdiction": "England",
+  "case_reference": "ANONYMISED-CASE",
+  "created_at": null,
+  "updated_at": null,
+  "stages": {
+    "01_intake_and_safety": "not_started",
+    "02_evidence_register": "not_started",
+    "03_section_extraction": "not_started",
+    "04_golden_thread_mapping": "not_started",
+    "05_evidence_alignment": "not_started",
+    "06_priority_findings": "not_started",
+    "07_human_review": "not_started",
+    "08_final_output": "not_started"
+  },
+  "limitations": [],
+  "unresolved_matters": [],
+  "human_release_status": "not_reviewed"
+}
