@@ -68,6 +68,16 @@ Open [`demo/index.html`](demo/index.html) in a browser. It uses a completely syn
 
 No document is uploaded and no personal data is processed by the demonstration.
 
+## Use it in a Claude Project
+
+1. Download or clone this repository, preserving its folder structure.
+2. Create a new Claude Project and add the repository files to the Project knowledge.
+3. Add the draft EHCP and any professional reports you are authorised to use.
+4. Remove unnecessary personal identifiers unless the Project is operating in an approved secure environment.
+5. Start with the invocation below.
+
+The original five competition components are sufficient for a straightforward review. The additional ICM files provide clearer routing and a staged workflow for systems that can use the complete architecture.
+
 ## Standard invocation
 
 ```text
