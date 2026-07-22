@@ -21,4 +21,4 @@ Synthetic or irreversibly anonymised material only. No real child, family, schoo
 
 ## Release gate
 
-The repository must not claim a validated competition release unless the structural validator and all included fixtures pass in GitHub Actions.
+The repository must not claim a validated public release unless the structural validator and all included fixtures pass in GitHub Actions.
