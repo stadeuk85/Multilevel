@@ -1,9 +1,9 @@
 ---
 name: ehcp-golden-thread-editor
 description: Critique-only editorial review of draft Education, Health and Care Plans in England, focused on Sections B, E and F and their alignment with professional evidence.
-version: 1.1.0-competition
+version: 1.1.0
 jurisdiction: England
-status: competition-release
+status: public-release
 ---
 
 # EHCP Golden Thread Editor
