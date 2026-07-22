@@ -54,7 +54,7 @@ STAGES = [
 ]
 
 PUBLIC_TEXT_SUFFIXES = {".md", ".json", ".py", ".html", ".yml", ".yaml"}
-LEGACY_TERMS = ("competition",)
+LEGACY_TERMS = ("comp" "etition",)
 
 
 def load_json(relative_path: str) -> object:
