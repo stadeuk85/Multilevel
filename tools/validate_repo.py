@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the competition repository structure and response contract."""
+"""Validate the public repository structure and response contract."""
 
 from __future__ import annotations
 
@@ -20,7 +20,6 @@ REQUIRED_FILES = [
     "AGENTS.md",
     "CONTEXT.md",
     "FILE-MAP.md",
-    "COMPETITION_SUBMISSION.md",
     "identity.md",
     "rules.md",
     "examples.md",
