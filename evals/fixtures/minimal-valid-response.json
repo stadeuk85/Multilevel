@@ -13,7 +13,7 @@
       "EV-01 speech and language advice"
     ],
     "limitations": [
-      "Synthetic competition fixture. No real child or family data."
+      "Synthetic validation fixture. No real child or family data."
     ],
     "priority_finding_count_note": "One material finding is included in this minimal validation fixture; no additional findings are manufactured."
   },
@@ -83,7 +83,7 @@
   ],
   "human_review": {
     "status": "approved_for_editorial_use",
-    "reviewer_role": "competition fixture reviewer",
+    "reviewer_role": "synthetic fixture reviewer",
     "reviewed_at": "2026-07-22T08:00:00+02:00",
     "unresolved_matters": []
   },
