@@ -10,9 +10,9 @@ My son is autistic, and like many families in England we were expected to review
 
 The EHCP Golden Thread Editor was created to make that review more structured, transparent and manageable. It does not replace parents, professionals, local authorities or legal advisers. It helps a human reviewer see exactly what the draft says, what the evidence says and where the connection may have broken.
 
-## The competition idea
+## Core editorial method
 
-This entry treats an AI editor as an **editor, not a rewriter**.
+This project treats an AI editor as an **editor, not a rewriter**.
 
 It follows five core behaviours:
 
@@ -56,7 +56,7 @@ It tests whether:
 - make an automated statutory decision;
 - silently apply proposed SEND reforms as current law.
 
-## Try the competition demonstration
+## Try the interactive demonstration
 
 Open [`demo/index.html`](demo/index.html) in a browser. It uses a completely synthetic example and shows:
 
@@ -68,15 +68,15 @@ Open [`demo/index.html`](demo/index.html) in a browser. It uses a completely syn
 
 No document is uploaded and no personal data is processed by the demonstration.
 
-## Use it in a Claude Project
+## Use it in a project workspace
 
 1. Download or clone this repository, preserving its folder structure.
-2. Create a new Claude Project and add the repository files to the Project knowledge.
+2. Add the repository files to a Claude Project or another project workspace that supports reference files.
 3. Add the draft EHCP and any professional reports you are authorised to use.
-4. Remove unnecessary personal identifiers unless the Project is operating in an approved secure environment.
+4. Remove unnecessary personal identifiers unless the workspace is operating in an approved secure environment.
 5. Start with the invocation below.
 
-The original five competition components are sufficient for a straightforward review. The additional ICM files provide clearer routing and a staged workflow for systems that can use the complete architecture.
+The five core editor components are sufficient for a straightforward review. The additional ICM files provide clearer routing and a staged workflow for systems that can use the complete architecture.
 
 ## Standard invocation
 
@@ -94,11 +94,11 @@ Give revision tasks, not replacement wording.
 State where evidence is missing or uncertain.
 ```
 
-## The original five-part editor remains intact
+## The five-part editor
 
-The competition remit is still immediately visible and usable:
+The core editor remains immediately visible and independently usable:
 
-| Required part | One clear job |
+| Core part | One clear job |
 |---|---|
 | [`identity.md`](identity.md) | Defines who the editor is, what it reviews, its England jurisdiction and its boundaries |
 | [`rules.md`](rules.md) | Teaches the editor how to critique specifically without rewriting or inventing evidence |
@@ -106,11 +106,11 @@ The competition remit is still immediately visible and usable:
 | [`reference/`](reference/) | Holds stable EHCP checklists, evidence methods, authority hierarchy, safety guidance and output contracts |
 | [`README.md`](README.md) | Lets a stranger understand, install and invoke the editor |
 
-A user can stop at these five parts and use the editor in the way the competition describes.
+A user can stop at these five parts and use the editor directly.
 
-## What the later ICM Architect skill adds
+## ICM architecture
 
-After the competition began, the ICM Architect skill became available. It was used to add a governed architecture around the original editor without changing its critique-only remit:
+The ICM Architect method adds a governed architecture around the core editor without changing its critique-only remit:
 
 - a compact skill trigger and cold-start map;
 - explicit workspace and folder contracts;
@@ -120,7 +120,7 @@ After the competition began, the ICM Architect skill became available. It was us
 - a mandatory human-release gate;
 - schema validation, synthetic evaluations and release evidence.
 
-The repository is therefore both a clean competition editor and an example of how the editor can evolve into a traceable, resumable workflow.
+The repository is therefore both a focused editor and a traceable, resumable workflow.
 
 ## Governed ICM workflow
 
@@ -148,7 +148,7 @@ flowchart TD
 | [`reference/`](reference/) | Legal, editorial and evidence-review methodology |
 | [`templates/`](templates/review-run-template/) | Blank private review-run structure |
 | [`evals/`](evals/) | Synthetic fixtures and evaluation approach |
-| [`demo/`](demo/) | Public competition demonstration |
+| [`demo/`](demo/) | Public synthetic demonstration |
 | [`_release/`](_release/current/) | Release manifest and validation evidence |
 
 ## Output
@@ -208,7 +208,7 @@ python tools/validate_repo.py
 
 The GitHub Actions workflow checks:
 
-- the five original competition components;
+- the five core editor components;
 - required ICM entry and folder contracts;
 - all eight stage contracts;
 - JSON parsing;
@@ -220,6 +220,6 @@ The GitHub Actions workflow checks:
 
 ## Status
 
-**Competition release: v1.1.0, 22 July 2026**
+**General release: v1.1.0, 22 July 2026**
 
 This is a transparent methodology and governed prototype. It is not legal advice, a statutory decision system or a production platform for identifiable case records.
