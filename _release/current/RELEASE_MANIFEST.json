@@ -1,16 +1,16 @@
 {
-  "release": "1.1.0-competition",
+  "release": "1.1.0",
   "release_date": "2026-07-22",
-  "branch": "competition-icm-v1.1",
+  "branch": "master",
   "jurisdiction": "England",
-  "release_type": "ICM architecture and competition presentation hardening",
+  "release_type": "ICM architecture and public-use hardening",
   "status": "validated",
   "validation_run": {
     "workflow": "Validate editor contract",
     "run_number": 22,
     "result": "success"
   },
-  "core_competition_files": [
+  "core_editor_files": [
     "identity.md",
     "rules.md",
     "examples.md",
