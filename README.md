@@ -1,86 +1,183 @@
 # EHCP Golden Thread Editor
 
-## What this editor does
+> A parent-built, critique-only editor that helps families examine whether a draft Education, Health and Care Plan faithfully connects needs, outcomes and provision.
 
-This editor reviews a draft Education, Health and Care Plan under the framework for England. It concentrates on whether:
+[![Validate editor contract](https://github.com/stadeuk85/EHCP-Golden-Thread-Editor/actions/workflows/validate.yml/badge.svg)](https://github.com/stadeuk85/EHCP-Golden-Thread-Editor/actions/workflows/validate.yml)
 
-- Section B captures the special educational needs shown in the supplied evidence;
-- Section E contains meaningful outcomes linked to those needs and the child or young person's aspirations;
+## Why I built it
+
+My son is autistic, and like many families in England we were expected to review a complex statutory document without specialist support. Parents are often asked to trust that a draft EHCP is complete, accurate and properly reflects the professional evidence. Small omissions, vague wording or broken links between needs and provision can directly affect the support a child receives.
+
+The EHCP Golden Thread Editor was created to make that review more structured, transparent and manageable. It does not replace parents, professionals, local authorities or legal advisers. It helps a human reviewer see exactly what the draft says, what the evidence says and where the connection may have broken.
+
+## The competition idea
+
+This entry treats an AI editor as an **editor, not a rewriter**.
+
+It follows five core behaviours:
+
+1. quote the exact passage;
+2. identify one precise defect;
+3. explain the practical consequence;
+4. show the evidence or authority relied upon;
+5. return a bounded revision task, not replacement wording.
+
+## What it reviews
+
+The editor concentrates on the EHCP golden thread:
+
+```mermaid
+flowchart LR
+    A[Section A\nViews and aspirations] --> E[Section E\nMeaningful outcomes]
+    B[Section B\nSpecial educational needs] --> E
+    B --> F[Section F\nSpecial educational provision]
+    E --> F
+    K[Section K\nProfessional advice] --> B
+    K --> E
+    K --> F
+```
+
+It tests whether:
+
+- Section B records the individual functional educational needs shown in the supplied evidence;
+- Section E contains meaningful and observable outcomes linked to needs and aspirations;
 - Section F specifies provision for every identified Section B need;
-- professional recommendations have been included accurately or any departure is visible;
-- the plan forms a coherent needs-to-outcomes-to-provision golden thread.
+- professional recommendations are included accurately, weakened, omitted, contradicted or unclear;
+- each need, outcome and provision item forms a defensible thread;
+- uncertainty, missing reports and professional conflicts remain visible.
 
-It identifies weaknesses and returns revision tasks. It does not write the corrected plan for you.
+## What it will not do
 
-## Files in this editor
+- write a corrected EHCP;
+- invent hours, frequencies, staffing, diagnoses, outcomes or recommendations;
+- decide legal entitlement, placement, appeal grounds or remedies;
+- treat a warning phrase as automatically unlawful;
+- conceal disagreement between professional reports;
+- make an automated statutory decision;
+- silently apply proposed SEND reforms as current law.
 
-- `identity.md` defines who the editor is and its scope.
-- `rules.md` defines the critique method and non-rewriting boundary.
-- `examples.md` shows the required standard of feedback.
-- `reference/` contains checklists, source hierarchy and the output contract.
+## Try the competition demonstration
 
-## What to provide
+Open [`demo/index.html`](demo/index.html) in a browser. It uses a completely synthetic example and shows:
 
-Minimum:
+- the B to E to F mapping;
+- the three-priority-findings approach;
+- evidence alignment;
+- the difference between critique and rewriting;
+- the mandatory human-review gate.
 
-- the draft EHCP text or document;
-- the document stage, such as draft plan, amended draft, final plan under review or annual-review working copy.
-
-Recommended:
-
-- professional reports and advice used to prepare the plan;
-- the date and author or discipline of each report;
-- the user's review priority;
-- the child or young person's age or phase, where relevant and safe to share.
-
-Remove names, addresses, dates of birth, NHS numbers, school identifiers and other unnecessary personal information unless using an approved secure environment.
+No document is uploaded and no personal data is processed by the demonstration.
 
 ## Standard invocation
 
 ```text
-Review this draft EHCP in editor mode.
+Run the EHCP Golden Thread Editor.
 
 Jurisdiction: England
-Document stage: [draft / amended draft / annual review working copy]
-Priority:
-1. Evidence omitted from Section B
-2. Weak or unmeasurable Section E outcomes
-3. Section F provision that is vague, unquantified or weaker than the professional recommendations
-
-Return the three most important findings first.
+Document stage: amended draft
+Review Sections B, E and F.
+Prioritise the three most serious findings.
+Compare the plan with the supplied professional evidence.
 Quote the exact wording.
-Explain the defect and its consequence.
-Give me a revision task, not replacement wording.
-State where the evidence is insufficient.
+Explain the defect and why it matters.
+Give revision tasks, not replacement wording.
+State where evidence is missing or uncertain.
 ```
 
-## Focused invocations
+## Governed ICM workflow
 
-### Evidence audit
+The repository is structured so a reviewer or agent can recover workflow state from explicit artefacts rather than hidden reasoning.
 
-```text
-Compare this draft EHCP against the supplied professional reports. Identify each material recommendation as included, partially included, omitted, contradicted or unclear. Quote both the report and the plan. Do not draft missing provision.
+```mermaid
+flowchart TD
+    S1[01 Intake and safety] --> S2[02 Evidence register]
+    S2 --> S3[03 Section extraction]
+    S3 --> S4[04 Golden-thread mapping]
+    S4 --> S5[05 Evidence alignment]
+    S5 --> S6[06 Priority findings]
+    S6 --> S7[07 Human review]
+    S7 -->|approved| S8[08 Final output]
+    S7 -->|correction or specialist review| STOP[Stop or return]
 ```
 
-### Golden-thread review
+| File or folder | Purpose |
+|---|---|
+| [`SKILL.md`](SKILL.md) | Skill trigger, route and non-negotiable controls |
+| [`AGENTS.md`](AGENTS.md) | Cold-start map for a new reviewer or agent |
+| [`CONTEXT.md`](CONTEXT.md) | Repository workspace and state model |
+| [`workflows/`](workflows/01_ehcp-golden-thread-review/CONTEXT.md) | Ordered stage contracts and hand-offs |
+| [`reference/`](reference/) | Legal, editorial and evidence-review methodology |
+| [`templates/`](templates/review-run-template/) | Blank private review-run structure |
+| [`evals/`](evals/) | Synthetic fixtures and evaluation approach |
+| [`demo/`](demo/) | Public competition demonstration |
+| [`_release/`](_release/current/) | Release manifest and validation evidence |
 
-```text
-Map every Section B need to relevant Section E outcomes and Section F provision. Identify orphan needs, unsupported outcomes and provision without a stated need. Do not create missing links or wording.
+## Output
+
+A completed review provides:
+
+1. an editorial verdict and material limitations;
+2. up to three highest-impact findings;
+3. golden-thread breaks using stable A, B, E and F IDs;
+4. an evidence-alignment table;
+5. unresolved evidence and clarification needs;
+6. specific strengths worth preserving;
+7. a recorded human-review decision;
+8. a final self-check.
+
+The human-readable contract is in [`reference/output-schema.md`](reference/output-schema.md). The machine-readable JSON Schema is in [`reference/output-schema.json`](reference/output-schema.json).
+
+## Safety and privacy
+
+EHCPs may contain children’s personal data, health information and family circumstances. Real case material must not be committed to this public repository.
+
+The minimum controls include:
+
+- remove unnecessary identifiers;
+- use an approved secure processing environment;
+- apply least-privilege access;
+- define retention and deletion rules;
+- keep credentials server-side;
+- log access and material human decisions;
+- complete appropriate information-governance assessment and DPIA work;
+- require a human review before statutory use.
+
+See [`reference/privacy-and-safety.md`](reference/privacy-and-safety.md).
+
+## Legal framing
+
+The editor is limited to England. It distinguishes:
+
+- statutory duties;
+- regulations;
+- statutory guidance;
+- professional evidence;
+- local policy;
+- internal consistency;
+- editorial good practice.
+
+The authority register was reviewed on **22 July 2026** and points only to official sources. Live use must recheck current official versions. See [`reference/authority-register.json`](reference/authority-register.json).
+
+## Validation
+
+Run:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python tools/validate_repo.py
 ```
 
-### Section F specificity review
+The GitHub Actions workflow checks:
 
-```text
-Review Section F for missing type, frequency, duration, staffing, expertise, group size, delivery method, review mechanism or responsible party. Quote the exact phrase and ask the author to recover the missing detail from the evidence. Do not propose figures.
-```
+- required ICM entry files;
+- all eight stage contracts;
+- JSON parsing;
+- the machine-readable response schema;
+- a synthetic valid-output fixture;
+- the core critique-only controls.
 
-## Expected output
+## Status
 
-The editor follows `reference/output-schema.md`. It starts with three priority findings, then gives golden-thread breaks, evidence requiring clarification and strengths worth preserving.
+**Competition release: v1.1.0, 22 July 2026**
 
-## Limits
-
-- Editorial support is not legal advice.
-- A phrase is not automatically defective merely because it appears on a warning list. Context and evidence determine the finding.
-- The editor cannot resolve conflicts in professional evidence. It exposes the conflict and asks for a human decision or further advice.
-- The editor must not treat proposed SEND reforms as current law.
+This is a transparent methodology and governed prototype. It is not legal advice, a statutory decision system or a production platform for identifiable case records.
