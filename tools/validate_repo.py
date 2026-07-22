@@ -95,7 +95,7 @@ def main() -> int:
         return 1
 
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
-    validation_errors = sorted(validator.iter_errors(fixture), key=lambda item: list(item.path))
+    validation_errors = sorted(validator.iter_errors(fixture), key=lambda item: str(list(item.path)))
     if validation_errors:
         for error in validation_errors:
             location = ".".join(str(part) for part in error.path) or "<root>"
@@ -118,7 +118,7 @@ def main() -> int:
     )
     require_phrases(
         "README.md",
-        ["identity.md", "rules.md", "examples.md", "reference/", "does not rewrite"],
+        ["identity.md", "rules.md", "examples.md", "reference/", "editor, not a rewriter"],
         errors,
     )
     require_phrases(
