@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.1.0",
+  "review_id": "DEMO-2026-001",
+  "verdict": {
+    "document_stage": "amended draft",
+    "review_scope": [
+      "Section B",
+      "Section E",
+      "Section F",
+      "professional evidence alignment"
+    ],
+    "evidence_supplied": [
+      "EV-01 speech and language advice"
+    ],
+    "limitations": [
+      "Synthetic competition fixture. No real child or family data."
+    ],
+    "priority_finding_count_note": "One material finding is included in this minimal validation fixture; no additional findings are manufactured."
+  },
+  "priority_findings": [
+    {
+      "finding_id": "P1",
+      "severity": "critical",
+      "confidence": "high",
+      "section": "F",
+      "location": "Section F, item F-03",
+      "draft_quote": "The pupil will have regular access to communication support.",
+      "evidence_quote": "Provide one direct individual session each week for 30 minutes, reviewed termly by a speech and language therapist.",
+      "defect": "The draft removes the recommended delivery format, frequency, duration, professional responsibility and review interval.",
+      "why_it_matters": "The setting and family cannot determine what must be delivered or compare delivery with the professional recommendation.",
+      "basis": [
+        "statutory_guidance",
+        "professional_evidence"
+      ],
+      "authority_citations": [
+        {
+          "source_type": "statutory_guidance",
+          "authority_id": "SEND-CODE-2015",
+          "locator": "paragraph 9.69",
+          "checked_date": "2026-07-22"
+        }
+      ],
+      "revision_task": "Return to EV-01 and record whether each material delivery element is accepted. Where it is not accepted, record the human decision and evidence relied upon."
+    }
+  ],
+  "golden_thread_breaks": [
+    {
+      "type": "partial_thread",
+      "source_ids": [
+        "B-02",
+        "E-01",
+        "F-03"
+      ],
+      "explanation": "A communication thread is visible, but the Section F delivery detail is materially weaker than the supplied recommendation.",
+      "confidence": "high"
+    }
+  ],
+  "evidence_alignment": [
+    {
+      "evidence_id": "EV-01",
+      "recommendation_quote": "Provide one direct individual session each week for 30 minutes, reviewed termly by a speech and language therapist.",
+      "recommendation_location": "EV-01, recommendation 4",
+      "draft_location": "Section F, item F-03",
+      "classification": "partially_included",
+      "missing_or_altered_elements": [
+        "direct delivery",
+        "individual format",
+        "weekly frequency",
+        "30-minute duration",
+        "therapist responsibility",
+        "termly review"
+      ],
+      "human_action": "Confirm whether the recommendation is accepted and restore or explain each altered material element through the normal drafting process."
+    }
+  ],
+  "clarifications": [],
+  "strengths": [
+    {
+      "quote": "The pupil uses a communication aid to express choices during lessons and unstructured times.",
+      "location": "Section B, item B-02",
+      "explanation": "The wording describes an individual functional educational impact rather than relying on a diagnostic label."
+    }
+  ],
+  "human_review": {
+    "status": "approved_for_editorial_use",
+    "reviewer_role": "competition fixture reviewer",
+    "reviewed_at": "2026-07-22T08:00:00+02:00",
+    "unresolved_matters": []
+  },
+  "self_check": {
+    "no_replacement_wording": true,
+    "no_invented_facts": true,
+    "authority_types_distinguished": true,
+    "uncertainty_visible": true,
+    "sensitive_data_minimised": true,
+    "human_review_completed": true
+  }
+}
