@@ -84,6 +84,34 @@ Give revision tasks, not replacement wording.
 State where evidence is missing or uncertain.
 ```
 
+## The original five-part editor remains intact
+
+The competition remit is still immediately visible and usable:
+
+| Required part | One clear job |
+|---|---|
+| [`identity.md`](identity.md) | Defines who the editor is, what it reviews, its England jurisdiction and its boundaries |
+| [`rules.md`](rules.md) | Teaches the editor how to critique specifically without rewriting or inventing evidence |
+| [`examples.md`](examples.md) | Shows weak feedback, strong feedback and prohibited rewriting |
+| [`reference/`](reference/) | Holds stable EHCP checklists, evidence methods, authority hierarchy, safety guidance and output contracts |
+| [`README.md`](README.md) | Lets a stranger understand, install and invoke the editor |
+
+A user can stop at these five parts and use the editor in the way the competition describes.
+
+## What the later ICM Architect skill adds
+
+After the competition began, the ICM Architect skill became available. It was used to add a governed architecture around the original editor without changing its critique-only remit:
+
+- a compact skill trigger and cold-start map;
+- explicit workspace and folder contracts;
+- eight numbered review stages;
+- visible stage outputs and hand-offs;
+- a copied private case-run template;
+- a mandatory human-release gate;
+- schema validation, synthetic evaluations and release evidence.
+
+The repository is therefore both a clean competition editor and an example of how the editor can evolve into a traceable, resumable workflow.
+
 ## Governed ICM workflow
 
 The repository is structured so a reviewer or agent can recover workflow state from explicit artefacts rather than hidden reasoning.
@@ -105,6 +133,7 @@ flowchart TD
 | [`SKILL.md`](SKILL.md) | Skill trigger, route and non-negotiable controls |
 | [`AGENTS.md`](AGENTS.md) | Cold-start map for a new reviewer or agent |
 | [`CONTEXT.md`](CONTEXT.md) | Repository workspace and state model |
+| [`FILE-MAP.md`](FILE-MAP.md) | ICM layer map and complete navigation aid |
 | [`workflows/`](workflows/01_ehcp-golden-thread-review/CONTEXT.md) | Ordered stage contracts and hand-offs |
 | [`reference/`](reference/) | Legal, editorial and evidence-review methodology |
 | [`templates/`](templates/review-run-template/) | Blank private review-run structure |
@@ -169,12 +198,15 @@ python tools/validate_repo.py
 
 The GitHub Actions workflow checks:
 
-- required ICM entry files;
+- the five original competition components;
+- required ICM entry and folder contracts;
 - all eight stage contracts;
 - JSON parsing;
 - the machine-readable response schema;
 - a synthetic valid-output fixture;
-- the core critique-only controls.
+- legal-authority and release records;
+- the core critique-only controls;
+- the no-upload public demo boundary.
 
 ## Status
 
