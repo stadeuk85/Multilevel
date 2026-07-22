@@ -1,0 +1,52 @@
+{
+  "register_version": "1.0.0",
+  "jurisdiction": "England",
+  "last_reviewed": "2026-07-22",
+  "review_rule": "Check the current official source before relying on an authority in a live review.",
+  "authorities": [
+    {
+      "authority_id": "CFA-2014",
+      "source_type": "statutory_duty",
+      "title": "Children and Families Act 2014, Part 3",
+      "official_url": "https://www.legislation.gov.uk/ukpga/2014/6/contents",
+      "key_locators": [
+        "section 37",
+        "section 42"
+      ],
+      "status_note": "Use the current revised text and confirm amendments before live reliance."
+    },
+    {
+      "authority_id": "SEND-REGS-2014",
+      "source_type": "regulation",
+      "title": "Special Educational Needs and Disability Regulations 2014",
+      "official_url": "https://www.legislation.gov.uk/uksi/2014/1530/contents",
+      "key_locators": [
+        "regulation 12",
+        "Schedule 2"
+      ],
+      "status_note": "Use the current revised text and confirm amendments before live reliance."
+    },
+    {
+      "authority_id": "SEND-CODE-2015",
+      "source_type": "statutory_guidance",
+      "title": "SEND code of practice: 0 to 25 years",
+      "official_url": "https://www.gov.uk/government/publications/send-code-of-practice-0-to-25",
+      "published": "2014-06-11",
+      "last_page_update": "2024-09-12",
+      "applies_to": "England",
+      "key_locators": [
+        "paragraph 9.69"
+      ],
+      "status_note": "The GOV.UK publication remained the current published statutory guidance when this register was reviewed on 22 July 2026."
+    },
+    {
+      "authority_id": "SEND-REFORM-2026",
+      "source_type": "proposed_change",
+      "title": "SEND reform: putting children and young people first",
+      "official_url": "https://www.gov.uk/government/consultations/send-reform-putting-children-and-young-people-first",
+      "published": "2026-02-23",
+      "consultation_status": "closed",
+      "status_note": "Proposal and consultation material only. Do not treat it as law or statutory guidance in force."
+    }
+  ]
+}
